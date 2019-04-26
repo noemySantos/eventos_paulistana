@@ -1,0 +1,24 @@
+<ion-content>
+  <ion-slides>
+    <ion-slide *ngFor="let concurso of concursos">
+      <ion-card>
+        <img src="{{concurso.imagem}}" alt="">
+        <ion-card-header>
+          <ion-card-title>{{concurso.title}}</ion-card-title>
+          <ion-card-subtitle>{{concurso.subtitle}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>{{concurso.descricao}}</ion-card-content>
+
+        <ion-item>
+          <ion-icon name="trash" slot="start" (click)="excluir(concurso)"></ion-icon>
+          <ion-icon name="thumbs-up" slot="end" (click)="like(concurso)"></ion-icon>
+          <ion-badge color="success" slot="end">{{concurso.like}}</ion-badge>
+          <ion-icon name="thumbs-down" slot="end"></ion-icon>
+          <ion-badge color="dark" slot="end">{{concurso.deslike}}</ion-badge>
+        </ion-item>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+
+</ion-content>
